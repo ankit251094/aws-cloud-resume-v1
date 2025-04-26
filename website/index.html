@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ankit Pandey Resume</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Ankit Vinod Pandey</h1>
+      <p>Parsippany, NJ 07054 | 513-356-1504 | <a href="mailto:ankit251094pandey@gmail.com">ankit251094pandey@gmail.com</a></p>
+    </header>
+
+    <div class="view-section">
+      <div class="counter-box">
+        <span id="counter-value">Loading...</span>
+        <p>Profile Views</p>
+      </div>
+    </div>
+    
+    <section>
+      <h2>Summary</h2>
+      <p>AWS Engineer & Software Engineer with 8 years of experience in cloud technology, Java, Spring, PostgreSQL, and automation.</p>
+      <p>Proven experience in production support, technology migrations, and cost optimization.</p>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <h3>AWS Engineer | Product Support Engineer | Software Engineer</h3>
+      <p>Tata Consultancy Services Ltd, New Jersey, USA | Apr 2021 – Present</p>
+      <ul>
+        <li>Migrated 20+ Spring Batch apps to Java 21/Spring Boot 3.2.7 improving performance by 20% and reducing AWS Batch cost by 15%.</li>
+        <li>Handled AWS Code Commit to Bitbucket migration with full history and Snyk integration.</li>
+        <li>Optimized EC2 and S3 usage, saving over $55K/year.</li>
+        <li>Resolved production issues using AWS CloudWatch, X-Ray, and Log Insight.</li>
+        <li>Led Oracle to Amazon Aurora PostgreSQL migration with encryption and optimization.</li>
+        <li>Built real-time damage detection system using Rekor cameras and RapidAPI.</li>
+        <li>Developed ABG Chargeback System recovering $2M+ annually with batch jobs and APIs.</li>
+      </ul>
+
+      <h3>Software Engineer Intern</h3>
+      <p>PROJiTECH LLC, Cleveland, USA | Jun 2020 – Apr 2021</p>
+      <ul>
+        <li>Developed iOS apps with AWS Cognito, DynamoDB, and real-time chat via PubNub.</li>
+      </ul>
+
+      <h3>System Engineer</h3>
+      <p>Tata Consultancy Services Ltd, Mumbai, India | Oct 2016 – Aug 2019</p>
+      <ul>
+        <li>Automated damage management workflows for Avis Budget Group using Java modules.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <ul class="columns">
+        <li><strong>Cloud & DevOps:</strong> AWS, Jenkins, Docker, Snyk, OpenRewrite, Amazon Q</li>
+        <li><strong>Languages:</strong> Java, Python, SQL, PL/SQL, C, Swift</li>
+        <li><strong>Frameworks:</strong> Spring Boot, Spring Batch, JSP</li>
+        <li><strong>Databases:</strong> PostgreSQL, Oracle, MySQL</li>
+        <li><strong>Big Data:</strong> Hadoop, Spark, PySpark</li>
+        <li><strong>Tools:</strong> Flex, FileNet, Jira, ServiceNow, Log Insight</li>
+        <li><strong>OS & Scripting:</strong> Unix/Linux, Shell, Cron Jobs</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <ul>
+        <li>AWS Certified Cloud Practitioner (CLF-C02)</li>
+        <li>AWS Certified AI Practitioner (AIF-C01)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <p><strong>Master of Engineering, Computer Science</strong><br/>
+      University of Cincinnati, OH | Aug 2019 – Dec 2020</p>
+
+      <p><strong>Bachelor of Engineering, Computer Engineering</strong><br/>
+      University of Mumbai, India | Jul 2012 – May 2016</p>
+    </section>
+
+    <section>
+      <h2>Academic Projects</h2>
+      <ul>
+        <li>Weather Data Analysis – Processed TBs of data using Python and Spark.</li>
+        <li>Graph Analysis – PySpark adjacency list and cluster coefficients.</li>
+        <li>Job Application Portal – PHP-based portal hosted on AWS EC2.</li>
+        <li>MapReduce – Custom tf-idf implementation for big datasets.</li>
+      </ul>
+    </section>
+  </div>
+  <script>
+    async function fetchCounter() {
+      try {
+        const response = await fetch('https://uttzmhfaj6ctzorwrm6sr4svai0jcxxn.lambda-url.us-east-1.on.aws/');
+        if (!response.ok) throw new Error('Failed to fetch counter');
+        const data = await response.json();
+        document.getElementById('counter-value').textContent = data.count || 0;
+      } catch (error) {
+        console.error('Error loading counter:', error);
+        document.getElementById('counter-value').textContent = 'N/A';
+      }
+    }
+  
+    // Fetch on load
+    window.onload = fetchCounter;
+  </script>
+  
+</body>
+</html>
